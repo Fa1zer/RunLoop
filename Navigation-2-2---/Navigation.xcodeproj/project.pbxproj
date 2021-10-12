@@ -35,6 +35,7 @@
 		E3AF9DD026DE55C000665FFC /* LogInInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AF9DCF26DE55C000665FFC /* LogInInspector.swift */; };
 		E3BC1FB92695E73A0075EB4B /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC1FB82695E73A0075EB4B /* LogInViewController.swift */; };
 		E3BC834926D39ADB00061E45 /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC834826D39ADB00061E45 /* Checker.swift */; };
+		E3D0A5762716075500F03ADA /* ProfileTimerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D0A5752716075500F03ADA /* ProfileTimerFooterView.swift */; };
 		E3F4262A26FCF7CC00AB08E7 /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F4262926FCF7CC00AB08E7 /* Coordinatable.swift */; };
 		E3F4262C26FCF99F00AB08E7 /* CreateModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F4262B26FCF99F00AB08E7 /* CreateModuleFactory.swift */; };
 		E3FA097B26DF8197003E4057 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FA097A26DF8197003E4057 /* CustomButton.swift */; };
@@ -103,6 +104,7 @@
 		E3AF9DCF26DE55C000665FFC /* LogInInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInInspector.swift; sourceTree = "<group>"; };
 		E3BC1FB82695E73A0075EB4B /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		E3BC834826D39ADB00061E45 /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
+		E3D0A5752716075500F03ADA /* ProfileTimerFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTimerFooterView.swift; sourceTree = "<group>"; };
 		E3F4262926FCF7CC00AB08E7 /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
 		E3F4262B26FCF99F00AB08E7 /* CreateModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateModuleFactory.swift; sourceTree = "<group>"; };
 		E3FA097A26DF8197003E4057 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				E3FA098826E55747003E4057 /* ProfilePost */,
 				E32C7E9C2663DEDA00C3014E /* ProfileHeaderView.swift */,
+				E3D0A5752716075500F03ADA /* ProfileTimerFooterView.swift */,
 				E32E82A426FF9FD5008482A7 /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -518,6 +521,7 @@
 				E3FA097F26E2ABD0003E4057 /* FeedModel.swift in Sources */,
 				E3F4262A26FCF7CC00AB08E7 /* Coordinatable.swift in Sources */,
 				E3FA097B26DF8197003E4057 /* CustomButton.swift in Sources */,
+				E3D0A5762716075500F03ADA /* ProfileTimerFooterView.swift in Sources */,
 				E32E82A126FF81E5008482A7 /* FeedInput.swift in Sources */,
 				E3BC1FB92695E73A0075EB4B /* LogInViewController.swift in Sources */,
 				060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */,

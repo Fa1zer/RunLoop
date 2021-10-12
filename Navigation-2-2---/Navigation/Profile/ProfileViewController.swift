@@ -13,10 +13,19 @@ class ProfileViewController: UIViewController, Coordinatable {
     weak var tabBar: TabBarController?
     var callTabBar: (() -> Void)?
     
+    private let footerView = ProfileTimerFooterView()
     private let headerView = ProfileHeaderView()
     private let logInViewControler = LogInViewController()
     private let cellid = "post"
-
+    
+    private var date: DateComponents? {
+        didSet {
+            if date!.second == -1 {
+                date!.minute! -= 1
+                date!.second = 59
+            }
+        }
+    }
     
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -101,19 +110,53 @@ class ProfileViewController: UIViewController, Coordinatable {
                                                      constant: 16),
         
                            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                           headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor)]
+                           headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ]
         
         NSLayoutConstraint.activate(constraints)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapImage))
         
         headerView.avatarImageView.isUserInteractionEnabled = true
-        
         headerView.avatarImageView.addGestureRecognizer(tapGesture)
         
         let tapExitGesture = UITapGestureRecognizer(target: self, action: #selector(tapExit))
         
         exit.addGestureRecognizer(tapExitGesture)
+        
+        var dateComponents  = DateComponents()
+        
+        dateComponents.minute = 1
+        dateComponents.second = 30
+        
+        self.date = dateComponents
+        
+        let firstTimer = Timer(timeInterval: 90, repeats: true) { timer in
+            self.date!.minute = 1
+            self.date!.second = 30
+            
+            self.footerView.timerLabel.text = "До обновления осталось: \(self.date!.minute!) минутself. \(self.date!.second!) секунд."
+            
+            let alertController = UIAlertController(title: "Страница была обновлена",
+                                        message: nil,
+                                        preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: "ОК", style: .default)
+            
+            
+            alertController.addAction(cancelAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+        let secondTimer = Timer(timeInterval: 1, repeats: true) { [self] timer in
+            self.date!.second! -= 1
+            
+            self.footerView.timerLabel.text = "До обновления осталось: \(date!.minute!) минут \(date!.second!) секунд."
+        }
+        
+        RunLoop.main.add(firstTimer, forMode: .common)
+        RunLoop.main.add(secondTimer, forMode: .common)
     }
     
     @objc func tapImage() {
@@ -170,16 +213,21 @@ class ProfileViewController: UIViewController, Coordinatable {
 
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) ->
-    CGFloat{ 220 }
+    CGFloat {
+        return 220
+    }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    { UITableView.automaticDimension }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-    { headerView }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return headerView
+    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    { posts.count + 1 }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count + 1
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard indexPath.row != 0 else {
@@ -222,4 +270,12 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             navigationController?.pushViewController(photosController, animated: true)
         }
     }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        footerView.timerLabel.text = "До обновления осталось: \(date!.minute!) минут \(date!.second!) секунд."
+        
+        return footerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat { 70 }
 }
