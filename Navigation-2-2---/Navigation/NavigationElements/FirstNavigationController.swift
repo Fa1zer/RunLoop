@@ -9,9 +9,8 @@
 import UIKit
 
 class FirstNavigationController: UINavigationController, Coordinatable {
-    
     var tabBar: TabBarController?
-    var callTabBar: (() -> Void)?
+    var callTabBar: (() -> Void)?    
     
     private let createModuleFactory = CreateModuleFactory()
 

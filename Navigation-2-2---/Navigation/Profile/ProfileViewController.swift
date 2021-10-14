@@ -17,7 +17,7 @@ class ProfileViewController: UIViewController, Coordinatable {
     private let headerView = ProfileHeaderView()
     private let logInViewControler = LogInViewController()
     private let cellid = "post"
-    
+
     private var date: DateComponents? {
         didSet {
             if date!.second == -1 {
@@ -110,14 +110,14 @@ class ProfileViewController: UIViewController, Coordinatable {
                                                      constant: 16),
         
                            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                           headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ]
+                           headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor)]
         
         NSLayoutConstraint.activate(constraints)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapImage))
         
         headerView.avatarImageView.isUserInteractionEnabled = true
+        
         headerView.avatarImageView.addGestureRecognizer(tapGesture)
         
         let tapExitGesture = UITapGestureRecognizer(target: self, action: #selector(tapExit))
@@ -213,21 +213,16 @@ class ProfileViewController: UIViewController, Coordinatable {
 
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) ->
-    CGFloat {
-        return 220
-    }
+    CGFloat{ 220 }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    { UITableView.automaticDimension }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return headerView
-    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    { headerView }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count + 1
-    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    { posts.count + 1 }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard indexPath.row != 0 else {
@@ -265,7 +260,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
                 images.append(UIImageView(image: UIImage(named: posts[i].image)))
             }
                 
-            photosController.images = images
+            photosController.imageViews = images
             
             navigationController?.pushViewController(photosController, animated: true)
         }
