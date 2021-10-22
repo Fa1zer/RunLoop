@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SecondNavigationController: UINavigationController {
+class SecondNavigationController: UINavigationController, Coordinatable {
+    var tabBar: TabBarController?
+    var callTabBar: (() -> Void)?    
 
     override func viewDidLoad() {
         super.viewDidLoad()

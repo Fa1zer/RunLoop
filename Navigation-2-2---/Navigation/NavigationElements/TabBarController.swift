@@ -28,6 +28,8 @@ class TabBarController: UITabBarController {
         postViewController.tabBar = self
         infoViewController.tabBar = self
         feedModule.tabBar = self
+        firstNavigationController.tabBar = self
+        secondNavigationController.tabBar = self
 
         let controllers = [firstNavigationController, secondNavigationController]
         

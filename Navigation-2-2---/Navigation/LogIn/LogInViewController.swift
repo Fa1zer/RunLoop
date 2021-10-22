@@ -14,6 +14,8 @@ class LogInViewController: UIViewController, Coordinatable {
     weak var tabBar: TabBarController?
     var delegate: LogInViewControllerDelegate?
     
+    
+    private let bruteForce = BruteForce()
     private let color = UIColor(patternImage: UIImage(named: "blue_pixel")!)
     
     private lazy var logInButton: CustomButton = {
@@ -97,6 +99,27 @@ class LogInViewController: UIViewController, Coordinatable {
         return password
     }()
     
+    private lazy var bruteForceButton: CustomButton = {
+        let button = CustomButton(title: "Brute Force on", color: .systemGreen) { [weak self] in
+            self?.startBruteForce()
+        }
+        
+        button.tintColor = .white
+        button.layer.cornerRadius = 10
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
+    private let activityIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .medium)
+        
+        view.stopAnimating()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -133,6 +156,8 @@ class LogInViewController: UIViewController, Coordinatable {
         view.addSubview(usersEmailOrPhone)
         view.addSubview(usersPassword)
         view.addSubview(logInButton)
+        view.addSubview(bruteForceButton)
+        view.addSubview(activityIndicator)
         
         scrollView.addSubview(containerView)
         
@@ -180,10 +205,44 @@ class LogInViewController: UIViewController, Coordinatable {
                                                     containerView.safeAreaLayoutGuide.trailingAnchor,
                                                   constant: -16),
             logInButton.heightAnchor.constraint(equalToConstant: 50),
-            logInButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -100)]
+            logInButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -100),
+        
+            bruteForceButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 16),
+            bruteForceButton.leadingAnchor.constraint(equalTo: logInButton.leadingAnchor),
+            bruteForceButton.trailingAnchor.constraint(equalTo: logInButton.trailingAnchor),
+            bruteForceButton.heightAnchor.constraint(equalTo: logInButton.heightAnchor),
+        
+            activityIndicator.trailingAnchor.constraint(equalTo: usersPassword.trailingAnchor),
+            activityIndicator.topAnchor.constraint(equalTo: usersPassword.topAnchor),
+            activityIndicator.bottomAnchor.constraint(equalTo: usersPassword.bottomAnchor),
+            activityIndicator.widthAnchor.constraint(equalTo: activityIndicator.heightAnchor)
+        ]
         
         NSLayoutConstraint.activate(constraints)
     }
+    
+    private func startBruteForce() {
+        let ALLOWED_CHARACTERS:   [String] = String().printable.map { String($0) }
+        var password: String = ""
+        
+        activityIndicator.startAnimating()
+
+        DispatchQueue.global().async { [self] in
+            while delegate?.inspect(emailOrPhone: "Baby Yoda", password: password) != true {
+                password = bruteForce.generateBruteForce(password, fromArray: ALLOWED_CHARACTERS)
+                
+                print(password)
+            }
+            
+            DispatchQueue.main.async {
+                activityIndicator.stopAnimating()
+            
+                usersPassword.text = password
+                usersPassword.isSecureTextEntry = false
+            }
+        }
+    }
+
     
     @objc private func keyboadWillShow(notification: NSNotification) {
         if let keyboardSize =
@@ -204,6 +263,8 @@ class LogInViewController: UIViewController, Coordinatable {
         
         if delegate?.inspect(emailOrPhone: usersEmailOrPhone.text!,
                              password: usersPassword.text!) == true {
+            usersPassword.isSecureTextEntry = true
+            
             navigationController?.pushViewController(ProfileViewController(), animated: true)
         } else {
             

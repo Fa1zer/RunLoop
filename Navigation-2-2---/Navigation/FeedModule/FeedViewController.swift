@@ -14,7 +14,6 @@ final class FeedViewController: UIViewController {
     
     init(viewModel: FeedOutput & FeedInput & Coordinatable) {
         self.viewModel = viewModel
-        
         self.callViewModel = { viewModel.callTabBar?() }
     
         super.init(nibName: nil, bundle: nil)

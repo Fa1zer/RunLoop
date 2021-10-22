@@ -16,6 +16,7 @@
 		060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782C7250CEE5D00A87020 /* PostViewController.swift */; };
 		7B19FBAE91D3325CECA0638E /* Pods_Navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1116856A5CA75EDF9490BDB1 /* Pods_Navigation.framework */; };
 		A197C37E510903E4079C0BE7 /* Pods_StorageService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18A1AC026FB924631232AA6 /* Pods_StorageService.framework */; };
+		E3171751270A2213001DC474 /* BruteForce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3171750270A2213001DC474 /* BruteForce.swift */; };
 		E318365626AEBC0E0067668E /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E318365526AEBC0E0067668E /* PhotosTableViewCell.swift */; };
 		E32C7E9D2663DEDA00C3014E /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C7E9C2663DEDA00C3014E /* ProfileHeaderView.swift */; };
 		E32E829D26FF7FA7008482A7 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E829C26FF7FA7008482A7 /* FeedViewModel.swift */; };
@@ -31,6 +32,7 @@
 		E369E05126B069E3002EA616 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E369E05026B069E3002EA616 /* PhotosViewController.swift */; };
 		E369E05326B19366002EA616 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E369E05226B19366002EA616 /* PhotosCollectionViewCell.swift */; };
 		E38FDB4426A5F3C100F274C6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38FDB4326A5F3C000F274C6 /* PostTableViewCell.swift */; };
+		E3AD6EC8271891DD00091E8F /* ProfileTimerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD6EC7271891DD00091E8F /* ProfileTimerFooterView.swift */; };
 		E3AF9DCE26DE559D00665FFC /* LogInFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AF9DCD26DE559D00665FFC /* LogInFactory.swift */; };
 		E3AF9DD026DE55C000665FFC /* LogInInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AF9DCF26DE55C000665FFC /* LogInInspector.swift */; };
 		E3BC1FB92695E73A0075EB4B /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC1FB82695E73A0075EB4B /* LogInViewController.swift */; };
@@ -85,6 +87,7 @@
 		9B3D029D08C4EDA2ACFC4ED2 /* Pods-Navigation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigation.debug.xcconfig"; path = "Target Support Files/Pods-Navigation/Pods-Navigation.debug.xcconfig"; sourceTree = "<group>"; };
 		C2286B703856DDC1F2020933 /* Pods-Navigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigation.release.xcconfig"; path = "Target Support Files/Pods-Navigation/Pods-Navigation.release.xcconfig"; sourceTree = "<group>"; };
 		C6D37837A7CAE87FA02453A8 /* Pods-StorageService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorageService.debug.xcconfig"; path = "Target Support Files/Pods-StorageService/Pods-StorageService.debug.xcconfig"; sourceTree = "<group>"; };
+		E3171750270A2213001DC474 /* BruteForce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BruteForce.swift; sourceTree = "<group>"; };
 		E318365526AEBC0E0067668E /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 		E32C7E9C2663DEDA00C3014E /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E32E829C26FF7FA7008482A7 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
@@ -99,10 +102,11 @@
 		E369E05026B069E3002EA616 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		E369E05226B19366002EA616 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		E38FDB4326A5F3C000F274C6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		E3AD6EC7271891DD00091E8F /* ProfileTimerFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTimerFooterView.swift; sourceTree = "<group>"; };
 		E3AF9DCD26DE559D00665FFC /* LogInFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInFactory.swift; sourceTree = "<group>"; };
 		E3AF9DCF26DE55C000665FFC /* LogInInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInInspector.swift; sourceTree = "<group>"; };
 		E3BC1FB82695E73A0075EB4B /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		E3BC834826D39ADB00061E45 /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
+		E3BC834826D39ADB00061E45 /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Checker.swift; path = Navigation/LogIn/Checker.swift; sourceTree = SOURCE_ROOT; };
 		E3F4262926FCF7CC00AB08E7 /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
 		E3F4262B26FCF99F00AB08E7 /* CreateModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateModuleFactory.swift; sourceTree = "<group>"; };
 		E3FA097A26DF8197003E4057 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -192,11 +196,28 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E317174D270A16BD001DC474 /* Checker */ = {
+			isa = PBXGroup;
+			children = (
+				E3BC834826D39ADB00061E45 /* Checker.swift */,
+			);
+			path = Checker;
+			sourceTree = "<group>";
+		};
+		E317174F270A21C9001DC474 /* BruteForce */ = {
+			isa = PBXGroup;
+			children = (
+				E3171750270A2213001DC474 /* BruteForce.swift */,
+			);
+			path = BruteForce;
+			sourceTree = "<group>";
+		};
 		E32C7E9B2663DEA500C3014E /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				E3FA098826E55747003E4057 /* ProfilePost */,
 				E32C7E9C2663DEDA00C3014E /* ProfileHeaderView.swift */,
+				E3AD6EC7271891DD00091E8F /* ProfileTimerFooterView.swift */,
 				E32E82A426FF9FD5008482A7 /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -229,7 +250,8 @@
 				E3BC1FB82695E73A0075EB4B /* LogInViewController.swift */,
 				E3AF9DCD26DE559D00665FFC /* LogInFactory.swift */,
 				E3AF9DCF26DE55C000665FFC /* LogInInspector.swift */,
-				E3BC834826D39ADB00061E45 /* Checker.swift */,
+				E317174F270A21C9001DC474 /* BruteForce */,
+				E317174D270A16BD001DC474 /* Checker */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -503,6 +525,7 @@
 				E318365626AEBC0E0067668E /* PhotosTableViewCell.swift in Sources */,
 				E32E82A526FF9FD5008482A7 /* ProfileViewController.swift in Sources */,
 				E369E05326B19366002EA616 /* PhotosCollectionViewCell.swift in Sources */,
+				E3171751270A2213001DC474 /* BruteForce.swift in Sources */,
 				E3FA098126E540C0003E4057 /* SecondNavigationController.swift in Sources */,
 				E32E829F26FF81D3008482A7 /* FeedOutput.swift in Sources */,
 				E32C7E9D2663DEDA00C3014E /* ProfileHeaderView.swift in Sources */,
@@ -510,6 +533,7 @@
 				060782B4250CE27700A87020 /* SceneDelegate.swift in Sources */,
 				E32E82A326FF99CA008482A7 /* FeedCofiguration.swift in Sources */,
 				E3606A8526C45BDA00A07F0E /* ProfilePosts.swift in Sources */,
+				E3AD6EC8271891DD00091E8F /* ProfileTimerFooterView.swift in Sources */,
 				E38FDB4426A5F3C100F274C6 /* PostTableViewCell.swift in Sources */,
 				E369E05126B069E3002EA616 /* PhotosViewController.swift in Sources */,
 				E32E829D26FF7FA7008482A7 /* FeedViewModel.swift in Sources */,

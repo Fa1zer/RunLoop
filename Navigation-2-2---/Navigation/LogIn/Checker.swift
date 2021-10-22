@@ -14,7 +14,7 @@ class Checker {
     static let checker = Checker()
     
     private(set) var login = "Baby Yoda".hash
-    private(set) var password = "password".hash
+    private(set) var password = "h".hash
     
     func check(emailOrPhone: String, password: String) -> Bool {
         if emailOrPhone.hash == login && password.hash == self.password {
