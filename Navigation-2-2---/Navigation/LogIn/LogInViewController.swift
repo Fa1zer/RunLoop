@@ -101,7 +101,7 @@ class LogInViewController: UIViewController, Coordinatable {
     
     private lazy var bruteForceButton: CustomButton = {
         let button = CustomButton(title: "Brute Force on", color: .systemGreen) { [weak self] in
-            self?.bruteForce(passwordToUnlock: "h")
+            self?.startBruteForce()
         }
         
         button.tintColor = .white
@@ -221,7 +221,7 @@ class LogInViewController: UIViewController, Coordinatable {
         NSLayoutConstraint.activate(constraints)
     }
     
-    private func bruteForce(passwordToUnlock: String) {
+    private func startBruteForce() {
         let ALLOWED_CHARACTERS:   [String] = String().printable.map { String($0) }
         var password: String = ""
         
@@ -232,15 +232,13 @@ class LogInViewController: UIViewController, Coordinatable {
                 password = bruteForce.generateBruteForce(password, fromArray: ALLOWED_CHARACTERS)
                 
                 print(password)
-                
-                if password == passwordToUnlock {
-                    DispatchQueue.main.async {
-                        activityIndicator.stopAnimating()
-                    
-                        usersPassword.text = password
-                        usersPassword.isSecureTextEntry = false
-                    }
-                }
+            }
+            
+            DispatchQueue.main.async {
+                activityIndicator.stopAnimating()
+            
+                usersPassword.text = password
+                usersPassword.isSecureTextEntry = false
             }
         }
     }
